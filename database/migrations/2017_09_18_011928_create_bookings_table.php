@@ -16,7 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('client_id');
-            $table->dateTime('date')->default(0)->nullable();
+            $table->dateTime('date')->nullable();
             $table->string('product',250);
             $table->integer('status')->default(0);
             $table->timestamps();

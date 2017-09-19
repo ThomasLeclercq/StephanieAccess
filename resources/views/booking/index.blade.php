@@ -1,10 +1,14 @@
 @extends('layouts.client')
 @section('content')
-	<div style="margin-top: 76px">
-		<h1>Bookings</h1>
+<div class="container panel-container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class="panel-title">Bookings</h1>
+		</div>
+		<div class="panel-body">
 		@if(isset($bookings) && count($bookings) >= 1)
 			<table class="table table-condensed table-hover table-striped table-responsive">
-				<thead class="thead-inverse">
+				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Surname</th>
@@ -43,8 +47,9 @@
 		@else
 			<p>No Bookings</p>
 		@endif
+		</div>
 	</div>
-
+</div>
 
 <!-- Modal -->
 <div id="deleteModal" class="modal fade" role="dialog">

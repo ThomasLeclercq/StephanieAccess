@@ -1,6 +1,6 @@
 @extends('layouts.client')
 @section('content')
-	<div class="container" style="margin-top: 76px">
+	<div class="container panel-container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="panel-title">New Booking</h1>

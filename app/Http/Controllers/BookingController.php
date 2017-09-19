@@ -87,6 +87,5 @@ class BookingController extends Controller
     {
         $booking->delete();
         return redirect()->back();
-
     }
 }

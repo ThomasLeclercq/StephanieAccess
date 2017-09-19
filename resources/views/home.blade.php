@@ -39,14 +39,13 @@
                           <label for="product">Quel service vous intéresse ?</label>
                           <select class="form-control" name="product">
                             <option value="">Je ne sais pas encore</option>
-                            <optgroup label="Sessions">
-                              <option value="Bars">Bars</option>
-                              <option value="Body Process">Body Process</option>
-                            </optgroup>
-                            <optgroup label="Classes">
-                              <option value="Classe de Bars">Classes Bars</option>
-                              <option value="Classes Fondations">Classes Fondations</option>
-                            </optgroup>
+                            @foreach($categories as $category)
+                                <optgroup label="{{ $category->name }}"></optgroup>
+                                @foreach($category->products as $product)
+                                <option value="{{ $product->name }}">{{ $product->name }}</option>
+                                @endforeach
+                            @endforeach
+
                           </select>
                         </div>
                     </div>

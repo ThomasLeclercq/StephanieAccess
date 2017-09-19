@@ -13,9 +13,12 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
             <li class="active"><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/quotes">Quotes</a></li>
             <li><a href="/bookings">Bookings</a></li>
             <li><a href="/clients">Clients</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/categories">Categories</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">

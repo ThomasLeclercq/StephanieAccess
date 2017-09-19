@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'CategoryController@home');
+
+//Dashboard
+Route::get('/dashboard','DashboardController@get');
 
 //Quotes
 Route::resource('quotes','QuotesController');
@@ -26,3 +27,10 @@ Route::resource('bookings', 'BookingController');
 //Clients
 Route::resource('clients', 'ClientController');
 Route::get('clients/archive/{clientId}', 'ClientController@archive');
+
+//Products
+Route::resource('products', 'ProductsController');
+Route::get('/products/{productId}/archive', 'ProductsController@archive');
+
+//Category
+Route::resource('categories', 'CategoryController');

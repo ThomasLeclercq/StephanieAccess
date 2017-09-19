@@ -1,10 +1,14 @@
 @extends('layouts.client')
 @section('content')
-	<div style="margin-top: 76px">
-		<h1>Clients</h1>
+<div class="container panel-container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class='panel-title'>Clients</h1>
+		</div>
+		<div class="panel-body">
 		@if(isset($clients) && count($clients) >= 1)
 			<table class="table table-responsive table-condensed table-striped table-hover">
-				<thead class="thead-inverse">
+				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Surname</th>
@@ -34,5 +38,7 @@
 		@else
 			<p>No Clients</p>
 		@endif
+		</div>
 	</div>
+</div>
 @stop

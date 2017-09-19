@@ -87,9 +87,10 @@ class QuotesController extends Controller
      * @param  \App\Quotes  $quotes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quotes $quotes)
+    public function destroy(Quotes $quote)
     {
-        //
+        $quote->delete();
+        return redirect()->back();
     }
 
     public function contact($quoteId)

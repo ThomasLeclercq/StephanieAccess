@@ -1,10 +1,14 @@
 @extends('layouts.client')
 @section('content')
-	<div style="margin-top: 76px">
-		<h1>Quotes</h1>
+<div class="container panel-container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class="panel-title">Quotes</h1>
+		</div>
+		<div class="panel-body">
 		@if(isset($quotes) && count($quotes) >= 1)
 			<table class="table table-responsive table-hovertable-condensed table-striped">
-				<thead class="thead-inverse">
+				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Surname</th>
@@ -14,6 +18,7 @@
 						<th>Date</th>
 						<th>Contact</th>
 						<th>Action</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,6 +44,9 @@
 								<a href="/quotes/transform/{{ $quote->id }}" class="btn btn-primary btn-sm btn-block">Transformer en résa</a>
 							@endif
 						</td>
+						<td>
+							<button type="button" class="btn btn-danger btn-sm deleteButton" data-toggle="modal" value="{{ $quote->id }}" data-target="#deleteModal">Delete</button>
+						</td>
 					</tr>
 					@endforeach
 				</tbody>
@@ -46,5 +54,47 @@
 		@else
 			<p>No quotes</p>
 		@endif
+		</div>
 	</div>
+</div>
+
+<!-- Modal -->
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+	<!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        	You are about to delete a quote from a possible client.
+        	<br>
+        	This action cannot be undone, please be sure before confirming it's deletion.
+        </p>
+      </div>
+      <div class="modal-footer">
+      	<form id="deleteForm" method="POST">
+      		{{ csrf_field() }}
+      		<input name="_method" type="hidden" value="DELETE">
+      		<button type="submit" name="deleteQuotes" class="btn btn-danger">Cancel quote</button>
+      	</form>
+      </div>
+    </div>
+  </div>
+</div>
+@stop
+
+@section('scripts')
+	<script type="text/javascript">
+		var form = document.getElementById('deleteForm');
+		var buttons = document.getElementsByClassName('deleteButton');
+		for (var i = buttons.length - 1; i >= 0; i--) {
+			buttons[i].addEventListener('click',function(e){
+				form.setAttribute('action','/quotes/'+this.value);
+			});
+		}
+	</script>
 @stop

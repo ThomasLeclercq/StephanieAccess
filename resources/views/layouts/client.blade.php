@@ -10,7 +10,23 @@
     
     <link rel="stylesheet" href="{{ asset('bower_resources/bootstrap/dist/css/bootstrap.min.css') }}" />
   	<link rel="stylesheet" href="{{ asset('bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
-  	
+  	<style type="text/css">
+     .panel-container{
+        margin-top: 76px;
+     } 
+     tr
+     {
+      text-align: center;
+     }
+     th
+     {
+      text-align: center;
+     }
+     .table > tbody > tr > td
+     {
+      vertical-align: middle;
+     }
+    </style>
 	@yield('styles')
 
 	<title>Stephanie Access</title>
