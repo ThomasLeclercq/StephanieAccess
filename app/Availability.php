@@ -12,7 +12,10 @@ class Availability extends Model
     	'id','availaDate','motiv'
     ];
 
-    protected $hidden = [];
+    protected $hidden = [
+    	'created_at',
+    	'updated_at'
+    ];
 
     protected $casts =[
     	'id'	=> 'integer'

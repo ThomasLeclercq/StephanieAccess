@@ -7,6 +7,7 @@
 		</div>
 		<div class="panel-body">
 		@if(isset($bookings) && count($bookings) >= 1)
+		<div style="overflow-x: auto">
 			<table class="table table-condensed table-hover table-striped table-responsive">
 				<thead>
 					<tr>
@@ -17,7 +18,7 @@
 						<th>Product</th>
 						<th>Date</th>
 						<th>Status</th>
-						<th>Action</th>
+						<th colspan="2">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,12 +39,15 @@
 							</td>
 							<td>
 								<a href="/bookings/{{ $booking->id }}/edit" class="btn btn-info btn-sm">Update</a>
+							</td>
+							<td>
 								<button type="button" class="btn btn-danger btn-sm deleteButton" data-toggle="modal" value="{{ $booking->id }}" data-target="#deleteModal">Delete</button>
 							</td>
 						</tr>
 					@endforeach
 				</tbody>
 			</table>
+		</div>
 		@else
 			<p>No Bookings</p>
 		@endif

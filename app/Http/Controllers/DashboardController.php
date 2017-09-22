@@ -16,6 +16,8 @@ class DashboardController extends Controller
 	{
 		
 		$availabilities = Availability::all();
-		return view('dashboard.index')->with(compact('availabilities'));
+		$jsonAvailabilities = json_encode($availabilities);
+
+		return view('dashboard.index')->with(compact('jsonAvailabilities'));
 	}
 }

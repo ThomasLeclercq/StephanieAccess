@@ -7,7 +7,6 @@
 	</div>
 	<form id="saveDates" action="/availabilities" method="POST">
 		{{ csrf_field() }}
-		<input type="hidden" name="_method" value="PATCH">
 		<div id="inputs" class="form-group">
 			
 		</div>
@@ -15,10 +14,6 @@
 </div>
 <!-- Availabilities Values -->
 <div class="hidden">
-	@foreach($availabilities as $availability)
-		<span class="id">{{ $availability->id }}</span>
-		<span class="date">{{ $availability->availaDate }}</span>
-		<span class="motiv">{{ $availability->motiv }}</span>
-	@endforeach
+	<span id="availabilities">{{ $jsonAvailabilities }}</span>
 </div>
 @stop

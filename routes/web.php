@@ -16,6 +16,9 @@ Route::get('/', 'CategoryController@home');
 //Dashboard
 Route::get('/dashboard','DashboardController@get');
 
+//Availabilities
+Route::resource('availabilities', 'AvailabilityController');
+
 //Quotes
 Route::resource('quotes','QuotesController');
 Route::get('/quotes/contact/{quoteId}', 'QuotesController@contact');

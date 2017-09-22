@@ -1,17 +1,43 @@
 $(document).ready(function(){
+	
+	var json = $('#availabilities').html();
+	var availabilities = JSON.parse(json);
+
 	$('#calendar').fullCalendar({
+		dayRender: function(date,cell){
+			var cellDate = cell.attr('data-date');
+			for (var i = availabilities.length - 1; i >= 0; i--) {
+				var userDate = moment(availabilities[i].availaDate).format('Y-MM-DD');
+				if(userDate == cellDate){
+					if(availabilities[i].motiv == "available"){
+						cell.css('backgroundColor','lightgreen');
+						cell.addClass('available');
+					} else {
+						cell.css('backgroundColor','darksalmon');
+						cell.addClass('unavailable');
+					}
+				}
+			}
+		},
 		dayClick: function(e) {
 			changeStatus(this);
-		}
+		},
 	});
 
 	$('#save').click(function(){
 		$('#inputs').empty();
-		getDates('available');
-		getDates('unavailable');
-		//$('#saveDates').submit();
+		var avail = getDates('available');
+		var unavail = getDates('unavailable');
+
+		var availInput = $(document.createElement('input')).attr('name','availableNumber').attr('type',"hidden").attr('value',avail);
+		var unavailInput = $(document.createElement('input')).attr('name','unavailableNumber').attr('type',"hidden").attr('value',unavail);
+		
+		$('#inputs').append(availInput,unavailInput);
+
+		$('#saveDates').submit();
 	});
 });
+
 
 
 function getDates(status){
@@ -23,23 +49,22 @@ function getDates(status){
 
 	var inputs = $('#inputs');	
 
+	var count = 0;
+
 	for (var i = dates.length - 1; i >= 0; i--) {
 		var group = $(document.createElement('div'));
 
 		var dateInput = $(document.createElement('input'));
-		dateInput.attr('class',dates[i]);
-		dateInput.attr('name','date');
+		dateInput.attr('name',"date"+status+i);
 		dateInput.attr('type','hidden');
 		dateInput.attr('value',dates[i]);
 
-		var motivInput = $(document.createElement('input'));
-		motivInput.attr('class',dates[i]);
-		motivInput.attr('name','motiv');
-		motivInput.attr('type','hidden');
-		motivInput.attr('value',status);
+		inputs.append(dateInput);
 
-		inputs.append(dateInput,motivInput);	
+		count++;
 	}
+
+	return count;
 }
 
 function changeStatus(object){
