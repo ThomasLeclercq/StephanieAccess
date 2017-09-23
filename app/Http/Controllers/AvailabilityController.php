@@ -35,11 +35,16 @@ class AvailabilityController extends Controller
      */
     public function store(Request $request)
     {
+        $yearMonth = $request->input('monthYear');
+        
         $availabilities = Availability::all();
-        foreach ($availabilities as $availability) {
-            $availability->delete();
-        }
 
+        foreach ($availabilities as $availability) {
+            if(date_format(date_create($availability->availaDate),'Y-m') == date_format(date_create($yearMonth),'Y-m')){
+                $availability->delete();
+            }
+        }
+        
         $availabilityNumber = $request->input('availableNumber');
         $unavailabilityNumber = $request->input('unavailableNumber');
         
@@ -75,7 +80,7 @@ class AvailabilityController extends Controller
             }
             
         }
-
+        
         return redirect('/dashboard');
     }
 

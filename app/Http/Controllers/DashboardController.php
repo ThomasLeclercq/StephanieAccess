@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Availability;
+use App\Booking;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -18,6 +19,8 @@ class DashboardController extends Controller
 		$availabilities = Availability::all();
 		$jsonAvailabilities = json_encode($availabilities);
 
-		return view('dashboard.index')->with(compact('jsonAvailabilities'));
+		$bookings = Booking::all();
+
+		return view('dashboard.index')->with(compact('jsonAvailabilities','bookings'));
 	}
 }

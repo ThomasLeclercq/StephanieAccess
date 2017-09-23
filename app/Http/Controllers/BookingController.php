@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Availability;
 use App\Booking;
 use Illuminate\Http\Request;
+use DateTime;
 
 class BookingController extends Controller
 {
@@ -58,7 +60,10 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        return view('booking.details')->with(compact('booking'));
+        $availabilities = Availability::where('motiv','unavailable')->get();
+        $JSONavailabilities = json_encode($availabilities);
+
+        return view('booking.details')->with(compact('booking','JSONavailabilities'));
     }
 
     /**
@@ -70,10 +75,11 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
+        
         $booking->date = date_format(date_create($request->input('date')),'Y-m-d H:i');
         $booking->product = $request->input('product');
         $booking->save();
-
+        
         return redirect('/bookings');
     }
 

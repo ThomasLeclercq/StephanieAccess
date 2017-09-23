@@ -34,7 +34,8 @@
 			            <div class="form-group">
 			                <label>Date</label>
 			                <div class='input-group date' id='datetimepicker'>
-			                    <input type='text' class="form-control" name="date" value="{{ date_format(date_create($booking->date),'g/m/Y h:i A') }}"/>
+			                    <input type='text' class="form-control" name="date" value="{{ date_format(date_create($booking->date),'Y-m-d h:i') }}" placeholder="{{ date_format(date_create($booking->date),'d/m/Y h:i A') }}" />
+			                    
 			                    <span class="input-group-addon">
 			                        <span class="glyphicon glyphicon-calendar"></span>
 			                    </span>
@@ -50,12 +51,25 @@
 			</div>
 		</div>
 	</div>
+	<span id="availabilities" class="hidden">{{ $JSONavailabilities }}</span>
 @stop
 
 @section('scripts')
 	<script type="text/javascript">
+		//Get availabilities in json
+		var json = $('#availabilities').html();
+		var availabilities = JSON.parse(json);
+		var disabled = [];
+		for (var i = availabilities.length - 1; i >= 0; i--) {
+			if(availabilities.motiv == 'unavailable'){
+				disabled.push(availabilities[i].availaDate);
+			}
+		}
+
         $(function () {
-            $('#datetimepicker').datetimepicker();
+            $('#datetimepicker').datetimepicker({
+            	disabledDates: disabled,
+            });
         });
     </script>
 @stop
