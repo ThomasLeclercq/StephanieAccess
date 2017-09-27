@@ -1,5 +1,12 @@
 <header class="container-fluid">	
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div id="phoneNumber" class="col-sm-4 col-sm-offset-4">
+    <p>0663830104</p> 
+  </div>
+
+  <div id="headerImage"></div>
+
+  <div id="navigation">
+    <nav id="nav-header" class="nav navbar-nav">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,31 +15,27 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Stephanie Access</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav pull-right">
+          <ul id="navbar-list" class="nav pull-right">
             <li class="active"><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="#story">Access Consciousness</a></li>
+            <li><a href="#products">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#getHere">S'y rendre</a></li>
+            <!--
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/quotes">Quotes</a></li>
             <li><a href="/bookings">Bookings</a></li>
             <li><a href="/clients">Clients</a></li>
             <li><a href="/products">Products</a></li>
             <li><a href="/categories">Categories</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            -->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+  </div>
+
+
 </header>

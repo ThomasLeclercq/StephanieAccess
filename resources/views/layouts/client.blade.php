@@ -10,7 +10,11 @@
     
     <link rel="stylesheet" href="{{ asset('bower_resources/bootstrap/dist/css/bootstrap.min.css') }}" />
   	<link rel="stylesheet" href="{{ asset('bower_resources/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" />
-  	<style type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+  	<link rel="stylesheet" type="text/css" href="{{ asset('bower_resources/font-awesome/css/font-awesome.min.css') }}">
+
+    <style type="text/css">
      .panel-container{
         margin-top: 76px;
      } 
@@ -28,6 +32,7 @@
      }
     </style>
 	@yield('styles')
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|BenchNine|Courgette|Domine|Dosis|Quicksand" rel="stylesheet"> 
 
 	<title>Stephanie Access</title>
 </head>

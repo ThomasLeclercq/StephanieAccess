@@ -1,9 +1,331 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Alegreya|BenchNine|Courgette|Domine|Dosis|Quicksand");
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+/*
+*	@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+*/
+
+/* 
+*	Colors
+*/
+$beige: #ded4cb;
+$light-purple: #a47a8e;
+$dark-purple:#4e3241;
+
+/*
+*	Fonts
+*/
+$title: Quicksand;
+$text: Dosis;
+
+/*
+*	Generals
+*/
+
+body
+{
+	background-color: $beige;
+}
+
+h1,h2,h3,h4,h4
+{
+	font-family: $title;
+	text-align: center;
+	color: $dark-purple;
+}
+h3
+{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 35px;
+}
+
+p
+{
+	font-family: $text;
+	font-size: 25px;
+	text-align: justify;
+}
+button
+{
+	font-family: $title;
+}
+
+.cta-button
+{
+	color: $dark-purple;
+	background-color: $light-purple;
+	border: 2px solid $dark-purple;
+	padding: 40px;
+	font-size: 2em;
+	border-radius: 5px/5px;
+}
+
+.cta-button:hover
+{
+	color: $beige;
+	background-color: $dark-purple;
+	border: 5px solid $beige;
+	
+}
+
+.cta-button-mini
+{
+	color: $dark-purple;
+	background-color: $light-purple;
+	border-radius: 5px/5px;
+	border: 2px solid $dark-purple;
+	padding: 20px;
+}
+
+.cta-button-mini:hover
+{
+	color: $beige;
+	background-color: $dark-purple;
+	border: 2px solid $beige;
+}
+
+.section
+{
+	position: relative;
+	min-height: 750px;
+	margin-bottom: 50px;
+}
+
+/*
+*	Header
+*/
+header
+{
+	height: 85vh;
+	background-color: $light-purple;
+	position: relative;
+}
+
+#headerImage
+{
+	height: 100%;
+	margin-left: -15px;
+	margin-right: -15px;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+	background: url('http://www.wallpaperup.com/uploads/wallpapers/2013/01/25/31120/big_thumb_a8a71c2ab83f63330726a4b23f0fa03a.jpg') center;
+	background-size: cover;
+	opacity: .8;
+	filter: saturate(120%);
+}
+
+#phoneNumber
+{
+	background-color: $beige;
+	border-radius: 10px/10px;
+	padding: 20px;
+	margin-top: -10px;
+	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
+	position: relative;
+	z-index: 2;
+}
+
+#phoneNumber > p
+{
+	text-align: center;
+	font-size: 2em;
+	color: $dark-purple;
+}
+
+#nav-header
+{
+	position: absolute;
+	right: 2vw;
+	top: 15vh;
+	background-color: $beige;
+	border-radius: 10px/10px;
+	text-align: center;
+	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
+}
+
+#navbar ul li a
+{
+	color: $dark-purple;
+	font-family: $title;
+	font-size: 2em;
+	border-bottom: 1px solid $light-purple;
+}
+
+/*
+*	Content
+*/
+
+/*
+*	Content Header
+*/
+#content
+{
+	margin-top: -150px;
+	margin-bottom: -150px;
+	background-color: white;
+	border-radius: 20px/20px;
+	box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, .5);
+	position: relative;
+	z-index: 2;
+}
+
+#headerTitle, #headerCta
+{
+	height: 15vh;
+}
+
+/*
+*	Story
+*/
+#story .story-container
+{
+	height: 100%;
+}
+#story-heading 
+{
+	padding-bottom: 50px;
+}
+#story-content
+{
+	position: relative;
+	z-index: 1;
+	background-color: #a47a8e;
+	color: #ded4cb;
+	top: -10px;
+	left: 45%;
+	padding: 20px 40px;
+	border-radius: 5px/5px;
+	box-shadow: -20px 20px 40px 0px rgba(0,0,0,.4); 
+}
+#mainImage
+{
+	background: url('https://redbranchmedia.com/blog/wp-content/uploads/2014/11/Bigstock-22321633-Spa-still-life-with-bamboo-fountain-and-zen-stone.jpg') center;
+	background-size: cover;
+	height: 70%;
+	width: 85%;
+	bottom: 0;
+	margin-left: 5%;
+	position: absolute;
+	z-index: 0;
+	border-radius: 5px/5px;
+}
+
+/*
+*	Products
+*/
+.caption
+{
+	height: 300px;
+}
+.caption p
+{
+	font-size: 18px;
+}
+.thumbnail
+{
+	position: relative;
+}
+
+.thumbnail-image
+{
+	background: url('http://johnmclaughlin.info/blog/wp-content/uploads/2015/04/zen.jpg') center;
+	background-size: cover;
+	height: 200px;
+	width: 100%;
+}
+
+.price
+{
+	position: absolute;
+	left: -10px;
+	top: -20px;
+	background-color: $light-purple;
+	color: $beige;
+	border-radius: 20px/20px;
+	text-align: center;
+	padding: 5px 20px;
+	border: 2px solid $beige;
+}
+.product-separator
+{
+	padding: 50px;
+}
+/*
+*	Contact
+*/
+#contact-content
+{
+	border:	1px solid $beige;
+	border-radius: 5px 140px 0px 80px;
+	padding-top: 50px;
+	padding-bottom: 100px;
+	padding-left: 150px;
+	padding-right: 50px;
+}
+#social-media
+{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: $light-purple;
+	border: 1px solid $dark-purple;
+	border-radius: 50px 0px 5px 0px;
+	padding: 10px;
+}
+#social-media a
+{
+	color: $beige;
+}
+#social-media a:hover
+{
+	color: $dark-purple;
+}
+#contactPicture
+{
+	height: 400px;
+	width: 300px;
+	position: absolute;
+	top: 80px;
+	left: -20px;
+	background-color: $light-purple;
+	border: 1px solid $dark-purple;
+	border-radius: 5px/5px;
+}
+#contactImage
+{
+	background: url('../../../public/images/portrait.png'), center;
+	background-size: cover;
+	height: 100%;
+	margin-left: -15px;
+	margin-right: -15px;
+	opacity: .9;
+	filter: saturate(120%);
+}
+
+/*
+*	Footer
+*/
+footer
+{
+	height: 25vh;
+	background-color: $light-purple;
+	position: relative;
+	z-index: -1;
+}
+#copyright	
+{
+	position: absolute;
+	text-align: center;
+	bottom: 10px;
+}
+#copyright a
+{
+	color: $beige;
+}

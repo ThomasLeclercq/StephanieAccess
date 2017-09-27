@@ -12,13 +12,20 @@ $(document).ready(function(){
 		var eventClient = $(this).find('.bookingClient').html();
 		var eventDate = $(this).find('.bookingDate').html();
 		var eventProduct = $(this).find('.bookingProduct').html();
-
-		var event = {id: eventId, start: eventDate, title: eventClient,product: eventProduct, color: "purple"};
+		var render = false;
+		if(eventDate === null){
+			eventDate = moment().format('Y-MM-DD');
+			render = true;
+		}
+		var event = {id: eventId, start: eventDate, end: moment(eventDate).add(60,'m').format('Y-MM-DD HH:mm:ss'), title: eventClient,product: eventProduct, color: "purple", allDay: render};
 		events.push(event);
 	});
 
 	$('#calendar').fullCalendar({
 		firstDay:1,
+		minTime: '07:00',
+		maxTime: '23:00',
+		defaultView: 'agendaWeek',
 		eventSources: [
 			events,
 		],
@@ -40,8 +47,11 @@ $(document).ready(function(){
 		dayClick: function() {
 			changeStatus(this);
 		},
-		eventRender: function(event,element){
-			return title = 	'<a href="/bookings/'+event.id+'/edit" class="btn btn-info btn-xs">'+moment(event.start).format('h:m')+' '+event.title+'</a>';
+		eventDrop: function(event) {
+			console.log(event);
+			var id = event.id;
+			var bookingInputs = $('.'+id);
+			bookingInputs[0].setAttribute('value',moment(event.start._d).subtract(1,'days').format('Y-MM-DD HH:mm:ss'));
 		},
 		editable: true,
 	});
@@ -80,6 +90,29 @@ $(document).ready(function(){
 		$('#saveDates').submit();
 	});
 	//END SAVE
+
+
+	//CREATE
+	var createdButtonPushed = 0;
+	$('#create').click(function(){
+		createdButtonPushed++;
+		var eventNumbers = events.length +1;
+		var booking = {id: eventNumbers, title: 'New Booking', start: moment().format("Y-MM-DD"), allDay: true, color:'gray', editable: true};
+		events.push(booking);
+		$('#calendar').fullCalendar('removeEventSource',events);
+		$('#calendar').fullCalendar('addEventSource',events);
+		$('#calendar').fullCalendar('refetchEventSources');
+		
+		createBookingInput(['date','client','product'],createdButtonPushed);
+		
+	});
+	//END CREATE
+
+	//SAVE BOOKINGS
+	$('#saveBookings').click(function(){
+
+	});
+	//END SAVE BOOKINGS
 
 	//ALL BUT THE WEEK
 	// CHANGE STATUS OF WEEK DAY AND WEEK-ENDS DAY
@@ -142,5 +175,16 @@ function changeStatus(object){
 	} else {
 		$(object).addClass('available');
 		$(object).css({'backgroundColor':'rgba(144,238,144)','opacity':'0.3'})
+	}
+}
+
+// Create bookingInputs for update of booking information
+// param Array of Booking parameters name
+function createBookingInput(name,bookingInputNumber){
+	for (var i = name.length - 1; i >= 0; i--) {
+		var bookingInput = $(document.createElement('input'));
+		bookingInput.attr('type','hidden').attr('class','booking newBooking'+bookingInputNumber).attr('name',name[i]);	
+		
+		$('#bookingForm').append(bookingInput);
 	}
 }
