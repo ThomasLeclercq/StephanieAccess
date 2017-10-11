@@ -39,9 +39,10 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         Products::create([
-            'name'      => $request->input('name'),
-            'price'     => $request->input('price'),
-            'category_id'  => $request->input('category')
+            'name'          => $request->input('name'),
+            'price'         => $request->input('price'),
+            'category_id'   => $request->input('category'),
+            'description'   => $request->input('description')
         ]);
 
         return redirect('/products');
@@ -79,9 +80,10 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Products $product)
     {
-        $product->name      = $request->input('name');
-        $product->price     = $request->input('price');
-        $product->category_id  = $request->input('category');
+        $product->name          = $request->input('name');
+        $product->price         = $request->input('price');
+        $product->category_id   = $request->input('category');
+        $product->description   = $request->input('description');
         $product->save();
 
         return redirect('/products');

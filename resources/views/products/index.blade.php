@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.admin')
 @section('content')
 	<div class="container panel-container">
 		<div class="panel panel-default">
@@ -13,6 +13,7 @@
 							<th>Name</th>
 							<th>Category</th>
 							<th>Price</th>
+							<th>Description</th>
 							<th colspan="2">Actions</th>
 						</tr>
 					</thead>
@@ -22,6 +23,7 @@
 							<td>{{ $product->name }}</td>
 							<td>{{ $product->category->name }}</td>
 							<td>{{ $product->price }}€</td>
+							<td>{{ $product->description }}</td>
 							<td>
 								<a href="/products/{{ $product->id }}/edit" class="btn btn-info btn-block">Edit</a>
 							</td>

@@ -37,14 +37,10 @@
 </head>
 <body>
 	@section('header')
-		@include('partials.header')
+		@include('partials.header-admin')
 	@show
 
 	@yield('content')
-
-	@section('footer')
-		@include('partials.footer')
-	@show
 
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
   	<script type="text/javascript" src="{{ asset('bower_resources/moment/min/moment.min.js') }}"></script>

@@ -6,9 +6,7 @@
 @import "variables";
 
 // Bootstrap
-/*
-*	@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-*/
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* 
 *	Colors
@@ -32,7 +30,7 @@ body
 	background-color: $beige;
 }
 
-h1,h2,h3,h4,h4
+h1,h2,h3,h4,h5
 {
 	font-family: $title;
 	text-align: center;
@@ -44,12 +42,16 @@ h3
 	margin-bottom: 50px;
 	font-size: 35px;
 }
-
+h4
+{
+	font-size: 26px;
+}
 p
 {
 	font-family: $text;
-	font-size: 25px;
+	font-size: 16px;
 	text-align: justify;
+	text-align-last: center;
 }
 button
 {
@@ -58,11 +60,11 @@ button
 
 .cta-button
 {
-	color: $dark-purple;
+	color: $beige;
 	background-color: $light-purple;
 	border: 2px solid $dark-purple;
 	padding: 40px;
-	font-size: 2em;
+	font-size: 22px;
 	border-radius: 5px/5px;
 }
 
@@ -76,7 +78,7 @@ button
 
 .cta-button-mini
 {
-	color: $dark-purple;
+	color: $beige;
 	background-color: $light-purple;
 	border-radius: 5px/5px;
 	border: 2px solid $dark-purple;
@@ -97,6 +99,25 @@ button
 	margin-bottom: 50px;
 }
 
+.loader
+{
+	position: absolute;
+    left: 45vw;
+    top: 45vh;
+    z-index: 1041;
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid $light-purple;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
 /*
 *	Header
 */
@@ -107,6 +128,11 @@ header
 	position: relative;
 }
 
+#mainHeaderAdmin
+{
+	height: 25vh;
+}
+
 #headerImage
 {
 	height: 100%;
@@ -115,7 +141,7 @@ header
 	width: 100%;
 	position: absolute;
 	z-index: 0;
-	background: url('http://www.wallpaperup.com/uploads/wallpapers/2013/01/25/31120/big_thumb_a8a71c2ab83f63330726a4b23f0fa03a.jpg') center;
+	background: url(/images/headerImage.jpg) center;
 	background-size: cover;
 	opacity: .8;
 	filter: saturate(120%);
@@ -150,11 +176,18 @@ header
 	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
 }
 
+#mainHeaderAdmin #nav-header
+{
+	top: 22vh;
+	left: 0;
+	width:100%;
+}
+
 #navbar ul li a
 {
 	color: $dark-purple;
 	font-family: $title;
-	font-size: 2em;
+	font-size: 22px;
 	border-bottom: 1px solid $light-purple;
 }
 
@@ -198,15 +231,15 @@ header
 	z-index: 1;
 	background-color: #a47a8e;
 	color: #ded4cb;
-	top: -10px;
-	left: 45%;
+	top: -60px;
+	left: 60%;
 	padding: 20px 40px;
 	border-radius: 5px/5px;
 	box-shadow: -20px 20px 40px 0px rgba(0,0,0,.4); 
 }
 #mainImage
 {
-	background: url('https://redbranchmedia.com/blog/wp-content/uploads/2014/11/Bigstock-22321633-Spa-still-life-with-bamboo-fountain-and-zen-stone.jpg') center;
+	background: url(/images/accessImage.jpg) left;
 	background-size: cover;
 	height: 70%;
 	width: 85%;
@@ -220,13 +253,11 @@ header
 /*
 *	Products
 */
-.caption
-{
-	height: 300px;
-}
 .caption p
 {
-	font-size: 18px;
+	font-size: 15px;
+	height: 250px;
+	overflow: auto;
 }
 .thumbnail
 {
@@ -235,9 +266,8 @@ header
 
 .thumbnail-image
 {
-	background: url('http://johnmclaughlin.info/blog/wp-content/uploads/2015/04/zen.jpg') center;
 	background-size: cover;
-	height: 200px;
+	height: 275px;
 	width: 100%;
 }
 
@@ -289,18 +319,18 @@ header
 }
 #contactPicture
 {
-	height: 400px;
-	width: 300px;
+	height: 300px;
+	width: 250px;
 	position: absolute;
-	top: 80px;
-	left: -20px;
+	top: 79px;
+	left: 40px;
 	background-color: $light-purple;
 	border: 1px solid $dark-purple;
 	border-radius: 5px/5px;
 }
 #contactImage
 {
-	background: url('../../../public/images/portrait.png'), center;
+	background: url(/images/BARS.jpg) center;
 	background-size: cover;
 	height: 100%;
 	margin-left: -15px;

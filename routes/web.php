@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'CategoryController@home');
+Route::get('/', 'HomeController@home');
 
 //Dashboard
 Route::get('/dashboard','DashboardController@get');

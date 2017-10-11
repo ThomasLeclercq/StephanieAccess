@@ -89,10 +89,4 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('/categories');
     }
-
-    public function home()
-    {
-        $categories = Category::all();
-        return view('home')->with(compact('categories'));
-    }
 }

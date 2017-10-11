@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Quotes;
 use App\Services\QuoteServices;
 use Illuminate\Http\Request;
@@ -44,7 +45,8 @@ class QuotesController extends Controller
             'email'     =>  $request->input('email'),
             'product'   =>  $request->input('product')
         ]);
-        return redirect()->back();
+        Session::flash('success','Merci de votre intérêt '.$request->input('surname').', Stephanie a bien reçu votre demande et vous contacteras bientôt.');
+        return redirect('/#content');
     }
 
     /**

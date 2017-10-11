@@ -1,5 +1,8 @@
 @extends('layouts.client')
 @section('content')
+    <!-- Loader -->
+        <div id="loader" class="loader hidden"></div>
+    <!-- End Loader -->
     <div id="content" class="container">
         
         <div id="header">
@@ -8,9 +11,15 @@
                 <h2>Facilitatrice certifiée Access Consciousness</h2>
             </div>
             <div id="headerCta" class="container">
-                <div class="col-xs-4 col-xs-offset-4">
-                    <button type="button" data-toggle="modal" data-target="#bookingModal" class="cta-button btn btn-block">Prendre rendez-vous</button>
-                </div>
+                @if(Session::has('success'))
+                    <div class="col-xs-10 col-xs-offset-1">    
+                        <p class="alert alert-success">{{ Session::get('success') }}</p>
+                    </div>
+                @else
+                    <div class="col-xs-4 col-xs-offset-4">    
+                        <button type="button" data-toggle="modal" data-target="#bookingModal" class="cta-button btn btn-block">Prendre rendez-vous</button>
+                    </div>
+                @endif
             </div>
         </div>
 
@@ -19,7 +28,7 @@
                 <h3>Access Consciousness</h3>
             </div>
             <div id="story-block" class="row story-container">
-                <div id="story-content" class="col-sm-6">
+                <div id="story-content" class="col-sm-4">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -41,111 +50,33 @@
                 <h3>Services</h3>
             </div>
             <div class="col-sm-10 col-sm-offset-1">
+                @foreach($categories as $category)
                 <div class="product-separator">
-                    <h4>Sessions</h4>
+                    <h4>{{ $category->name }}</h4>
                     <hr>
                 </div>
+
                 <div class="row">
                     <!-- Product -->
-                  
-                  <div class="col-sm-5">
-                    <div class="thumbnail">
-                      <div class="thumbnail-image thumb-1"></div>
-                      <div class="caption">
-                        <h4>Product Name</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <a href="#" class="cta-button-mini btn btn-block" role="button">Réserver</a>
+                  @foreach($products as $product)
+                     @if($product->category_id == $category->id)
+                      <div class="col-sm-6">
+                        <div class="thumbnail">
+                          <div id="{{ $product->name }}" class="thumbnail-image"></div>
+                          <div class="caption">
+                            <h5 class="thumbnail-{{ $product->name }}" >{{ $product->name }}</h5>
+                            <p>{{ $product->description }}</p>
+                            <a href="#" class="cta-button-mini btn btn-block bookingCTA" role="button">Réserver</a>
+                          </div>
+                        </div>
+                        <div class="price">
+                            <p>{{ $product->price }}€</p>
                         </div>
                       </div>
-                    </div>
-                    <div class="price">
-                        <p>80€</p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-2">
-                      
-                  </div>
-
-                <!-- Product -->
-
-                  <div class="col-sm-5">
-                    <div class="thumbnail">
-                      <div class="thumbnail-image thumb-1"></div>
-                      <div class="caption">
-                        <h4>Product Name</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <a href="#" class="cta-button-mini btn btn-block" role="button">Réserver</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="price">
-                        <p>80€</p>
-                    </div>
-                  </div>
-
-                </div>
-                
-                <div class="product-separator">
-                    <h4>Classes</h4>
-                    <hr>
-                </div>
-                <div class="row">
-                    <!-- Product -->
-                  
-                  <div class="col-sm-5">
-                    <div class="thumbnail">
-                      <div class="thumbnail-image thumb-1"></div>
-                      <div class="caption">
-                        <h4>Product Name</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <a href="#" class="cta-button-mini btn btn-block" role="button">Réserver</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="price">
-                        <p>80€</p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-2">
-                      
-                  </div>
-
-                <!-- Product -->
-
-                  <div class="col-sm-5">
-                    <div class="thumbnail">
-                      <div class="thumbnail-image thumb-1"></div>
-                      <div class="caption">
-                        <h4>Product Name</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <a href="#" class="cta-button-mini btn btn-block" role="button">Réserver</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="price">
-                        <p>80€</p>
-                    </div>
-                  </div>
-
-                </div>
+                      @endif
+                    @endforeach
+                   </div>
+                  @endforeach
             </div>
         </div>
 
@@ -194,19 +125,22 @@
                             <hr>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                       </li> 
+                       </li>
+                       <br> 
                        <li>
                             <h4>Autolib'</h4>
                             <hr>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                       </li> 
+                       </li>
+                       <br> 
                        <li>
                             <h4>Bus</h4>
                             <hr>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                        </li> 
+                       <br>
                        <li>
                             <h4>Train</h4>
                             <hr>
@@ -225,7 +159,7 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div id="bookingModalContent" class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Remplissez le formulaire pour prendre contact avec Stéphanie</h4>
@@ -238,24 +172,24 @@
 
                     <div class="form-group">
                         <label for="name" class="sr-only">Nom</label>
-                        <input type="text" name="name" class="form-control" required="" autofocus="" placeholder="Nom" required>
+                        <input type="text" name="name" class="form-control quoteInput" autofocus="" placeholder="Nom" required>
                     </div>
                     <div class="form-group">
                         <label for="surname" class="sr-only">Prénom</label>
-                        <input type="text" name="surname" class="form-control" placeholder="Prénom" required>
+                        <input type="text" name="surname" class="form-control quoteInput" placeholder="Prénom" required>
                     </div>
                     <div class="form-group">
                         <label for="phone" class="sr-only">Numéro de téléphone</label>
-                        <input type="phone" name="phone" class="form-control" placeholder="Numéro de téléphone" required>
+                        <input type="phone" name="phone" class="form-control quoteInput" placeholder="Numéro de téléphone" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="sr-only">Adresse email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Adresse email" required>
+                        <input type="email" name="email" class="form-control quoteInput" placeholder="Adresse email" required>
                     </div>
-                    <div class="form-group">
+                    <div id="selectFormGroup" class="form-group">
                       <label for="product">Quel service vous intéresse ?</label>
-                      <select class="form-control" name="product">
-                        <option value="">Je ne sais pas encore</option>
+                      <select id="bookingModalSelect" class="form-control quoteInput" name="product">
+                        <option id="firstOption" value="">Je ne sais pas encore</option>
                         @foreach($categories as $category)
                             <optgroup label="{{ $category->name }}"></optgroup>
                             @foreach($category->products as $product)
@@ -271,11 +205,61 @@
       </div>
       <div class="modal-footer">
         <div class="col-xs-6 col-xs-offset-3">
-            <button class="cta-button-mini btn-block" type="submit" form="quote">Prendre rendez-vous</button>
+            <button id="book" class="cta-button-mini btn-block" type="submit" form="quote">Prendre rendez-vous</button>
         </div>
       </div>
     </div>
 
   </div>
 </div>
+@stop
+
+@section('scripts')
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        //Thumbnail Image handler
+            var thumbnails = $('.thumbnail');
+            thumbnails.each(function(){
+                var imageName = $(this).find('h5').html();
+                var image = $('#'+imageName);
+                if(image.length > 0){
+                    image.css({'background':'url(images/'+imageName+'.jpg) center'});
+                }
+            });
+        // End Thumbnail image handler
+
+        // Booking CTA Handler
+            var bookingCTA = $('.bookingCTA');
+            bookingCTA.each(function(){
+                var productName = $(this).parent().find('h5').html();
+                $(this).click(function(){
+                    $('#firstOption').attr('value',productName);
+                    $('#selectFormGroup').addClass('hidden');
+                    $('#bookingModal').modal('toggle');
+                    $('#bookingModal').modal('show');
+                });
+            });
+        // END Booking CTA handler
+
+        // Quote Handler with loader
+            if(quoteReady()){
+                $('#book').click(function(){
+                    $('#bookingModalContent').hide();
+                    $('#loader').attr('class','loader');
+                });
+            }
+        // End quote handler
+    });
+
+    function quoteReady(){
+        var quoteInputs = $('.quoteInput');
+        quoteInputs.each(function(input){
+            if($(this).attr('value') != '' && $(this).attr('value') !== null && $(this).attr('value') !== undefined) {
+                return true;
+            }
+            return false;
+        });
+    }
+</script>    
 @stop

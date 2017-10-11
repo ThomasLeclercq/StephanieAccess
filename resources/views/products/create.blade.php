@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.admin')
 @section('content')
 	<div class="container panel-container">
 		<div class="panel panel-default">
@@ -35,6 +35,13 @@
 					<div class="form-group">
 						<label for="price">Product Price</label>
 						<input type="number" name="price" value="{{ $product->price or old('price') }}" step="0.01" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label for="description">Product Description</label>
+						<textarea name="description" class="form-control">
+							{{ $product->description or old('description') }}
+						</textarea>
 					</div>
 
 					<div class="panel-footer">
