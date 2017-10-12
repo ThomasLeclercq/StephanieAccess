@@ -59,25 +59,23 @@
 
                 <div class="row">
                     <!-- Product -->
-                  @foreach($products as $product)
-                     @if($product->category_id == $category->id)
-                      <div class="col-sm-6">
-                        <div class="thumbnail">
-                          <div id="{{ $product->name }}" class="thumbnail-image"></div>
-                          <div class="caption">
-                            <h5 class="thumbnail-{{ $product->name }}" >{{ $product->name }}</h5>
-                            <p>{{ $product->description }}</p>
-                            <a href="#" class="cta-button-mini btn btn-block bookingCTA" role="button">Réserver</a>
-                          </div>
-                        </div>
-                        <div class="price">
-                            <p>{{ $product->price }}€</p>
-                        </div>
+                  @foreach($category->products as $product)
+                  <div class="col-sm-6">
+                    <div class="thumbnail">
+                      <div id="{{ $product->name }}" class="thumbnail-image"></div>
+                      <div class="caption">
+                        <h5 class="thumbnail-{{ $product->name }}" >{{ $product->name }}</h5>
+                        <p>{{ $product->description }}</p>
+                        <a href="#" class="cta-button-mini btn btn-block bookingCTA" role="button">Réserver</a>
                       </div>
-                      @endif
-                    @endforeach
-                   </div>
+                    </div>
+                    <div class="price">
+                        <p>{{ $product->price }}€</p>
+                    </div>
+                  </div>
                   @endforeach
+                 </div>
+                @endforeach
             </div>
         </div>
         @endif
