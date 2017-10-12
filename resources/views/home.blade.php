@@ -45,6 +45,7 @@
             </div>
         </div>
 
+        @if(count($products > 0) && count($categories > 0))
         <div id="products" class="container-fluid section">
             <div class="row">
                 <h3>Services</h3>
@@ -79,6 +80,7 @@
                   @endforeach
             </div>
         </div>
+        @endif
 
         <div id="contact" class="section">
             <div class="row">
