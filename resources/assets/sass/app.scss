@@ -26,7 +26,7 @@ $text: Dosis;
 /*
 *	Sizes for media
 */
-$sm: 480px;
+$sm: 768px;
 
 /*
 *	Generals
@@ -90,7 +90,7 @@ button
 
 	@media screen and (max-width: $sm)
 	{
-		padding: initial;
+		padding: 20px;
 		font-size: 16px;
 	}
 }
@@ -110,6 +110,11 @@ button
 	border-radius: 5px/5px;
 	border: 2px solid $dark-purple;
 	padding: 20px;
+	
+	@media screen and (max-width: $sm)
+	{
+		padding: 10px;
+	}
 }
 
 .cta-button-mini:hover
@@ -117,6 +122,15 @@ button
 	color: $beige;
 	background-color: $dark-purple;
 	border: 2px solid $beige;
+}
+
+.close
+{
+	@media screen and (max-width: $sm)
+	{
+		font-size: 3em;
+		color: red;
+	}
 }
 
 .section
