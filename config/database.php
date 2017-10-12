@@ -48,11 +48,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'RDS_HOSTNAME',
-            'port' => 'RDS_PORT',
-            'database' => 'RDS_DATABASE',
-            'username' =>'RDS_USERNAME',
-            'password' => 'RDS_PASSWORD',
+            'host' => RDS_HOSTNAME,
+            'port' => RDS_PORT,
+            'database' => RDS_DATABASE,
+            'username' =>RDS_USERNAME,
+            'password' => RDS_PASSWORD,
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

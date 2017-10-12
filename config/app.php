@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'key' => 'APP_KEY',
+    'key' => APP_KEY,
     'cipher' => 'AES-256-CBC',
 
     /*
