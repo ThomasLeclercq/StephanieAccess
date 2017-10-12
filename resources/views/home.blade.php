@@ -15,7 +15,7 @@
                     <div class="col-xs-10 col-xs-offset-1">    
                         <p class="alert alert-success">{{ Session::get('success') }}</p>
                     </div>
-                @else
+                @elseif(isset($categories))
                     <div class="col-xs-4 col-xs-offset-4">    
                         <button type="button" data-toggle="modal" data-target="#bookingModal" class="cta-button btn btn-block">Prendre rendez-vous</button>
                     </div>
@@ -154,6 +154,7 @@
 
     </div>
 
+@if(isset($categories))
 <!-- Modal -->
 <div id="bookingModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -212,6 +213,8 @@
 
   </div>
 </div>
+@endif
+
 @stop
 
 @section('scripts')
