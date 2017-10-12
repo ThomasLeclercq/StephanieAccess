@@ -1,5 +1,6 @@
 <?php
 
+
 if(!defined('APP_KEY')){
     define('APP_KEY', $_SERVER['APP_KEY']);
 }

@@ -8512,6 +8512,12 @@ button {
   }
 }
 
+@media screen and (max-width: 992px) {
+  .panel-body {
+    overflow-x: scroll;
+  }
+}
+
 /*
 *	Header
 */
@@ -8614,6 +8620,12 @@ header {
   font-family: Quicksand;
   font-size: 22px;
   border-bottom: 1px solid #a47a8e;
+}
+
+@media screen and (min-width: 768px) {
+  #navbar ul li a {
+    font-size: 16px;
+  }
 }
 
 /*

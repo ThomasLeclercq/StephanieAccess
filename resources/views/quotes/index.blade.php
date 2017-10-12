@@ -16,7 +16,7 @@
 						<th>E-mail</th>
 						<th>Produit</th>
 						<th>Date</th>
-						<th>Contacté ?</th>
+						<th>Contacté?</th>
 						<th>Action</th>
 						<th></th>
 					</tr>

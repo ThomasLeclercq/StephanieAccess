@@ -84,7 +84,7 @@ class ClientController extends Controller
 
         $client->save();
 
-        return redirect('/client/'.$client->id.'/edit');
+        return redirect('/clients');
     }
 
     /**

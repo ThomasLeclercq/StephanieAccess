@@ -22,7 +22,7 @@
                             <option value="{{ $booking->product }}">Selection - {{ $booking->product }}</option>
                             @if(isset($categories))
 	                            @foreach($categories as $category)
-	                            	<optgroup>{{ $category->name }}</optgroup>
+	                            	<optgroup label="{{ $category->name }}"></optgroup>
 	                            	@foreach($category->products as $product)
 	                            	<option value="{{ $product->name }}">{{ $product->name }}</option>
 	                            	@endforeach
