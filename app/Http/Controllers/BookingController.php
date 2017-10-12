@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Availability;
 use App\Booking;
+use App\Category;
 use Illuminate\Http\Request;
 use DateTime;
 
@@ -60,10 +61,11 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
+        $categories = Category::all();
         $availabilities = Availability::where('motiv','unavailable')->get();
         $JSONavailabilities = json_encode($availabilities);
 
-        return view('booking.details')->with(compact('booking','JSONavailabilities'));
+        return view('booking.details')->with(compact('booking','JSONavailabilities','categories'));
     }
 
     /**

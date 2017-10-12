@@ -3,7 +3,7 @@
 	<div class="container panel-container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">{{ isset($category) ? $category->name : 'Category' }}</h1>
+				<h1 class="panel-title">{{ isset($category) ? $category->name : 'Nouvelle categorie' }}</h1>
 			</div>
 			<div class="panel-body">
 				<form action="{{ isset($category) ? '/categories/'.$category->id : '/categories' }}" method="POST">
@@ -14,15 +14,15 @@
 					@endif
 
 					<div class="form-group">
-						<label for="name">Category Name</label>
+						<label for="name">Nom</label>
 						<input type="text" name="name" value="{{ $category->name or old('name') }}" class="form-control">
 					</div>
 
 					<button type="submit" class="btn btn-primary btn-block">
 						@if(isset($category))
-							Update
+							Modifier
 						@else
-							Create
+							Créer
 						@endif
 					</button>
 				</form>

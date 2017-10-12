@@ -3,15 +3,15 @@
 	<div class="container panel-container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">Categories</h1>
+				<h1 class="panel-title">Catégories</h1>
 			</div>
 			<div class="panel-body">
 				@if( count($categories) >= 1)
 				<table class="table-condensed table-responsive table-striped table-hover">
 					<thead>
 						<tr>
-							<th>Number</th>
-							<th>Name</th>
+							<th>Numéro</th>
+							<th>Nom</th>
 							<th colspan="2">Actions</th>
 						</tr>
 					</thead>
@@ -21,11 +21,11 @@
 							<td>{{ $category->id }}</td>
 							<td>{{ $category->name }}</td>
 							<td>
-								<a href="/categories/{{ $category->id }}/edit" class="btn btn-info btn-block">Edit</a>
+								<a href="/categories/{{ $category->id }}/edit" class="btn btn-info btn-block">Editer</a>
 							</td>
 							<td>
 								<button type="button" class="btn btn-danger btn-block deleteButton" data-toggle="modal" data-target="#deleteModal" value="{{ $category->id }}">
-									Delete	
+									Supprimer	
 								</button>
 							</td>
 						</tr>	
@@ -33,11 +33,11 @@
 					</tbody>
 				</table>
 				@else
-					<p>No Categories</p>
+					<p>Pas de catégories</p>
 				@endif
 			</div>
 			<div class="panel-footer">
-				<a href="/categories/create" class="btn btn-primary">Create</a>
+				<a href="/categories/create" class="btn btn-primary">Créer nouvelle catégorie</a>
 			</div>
 		</div>
 	</div>
@@ -48,19 +48,19 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Warning</h4>
+				<h4 class="modal-title">Attention !!!</h4>
 			</div>
 			<div class="modal-body">
 				<p>
-					You are about to delete a category, this cannot be undone.<br>
-					Are you sure ?
+					Vous êtes sur le point de supprimer une catégorie, attention cette action sera définitive.<br>
+					Etes-vous bien sûr de vouloir faire cela ?
 				</p>
 			</div>
 			<div class="modal-footer">
 				<form id="deleteForm" method="POST">
 			  		{{ csrf_field() }}
 			  		<input name="_method" type="hidden" value="DELETE">
-			  		<button type="submit" name="deleteCategory" class="btn btn-danger">Remove category</button>
+			  		<button type="submit" name="deleteCategory" class="btn btn-danger">Supprimer categorie</button>
 			  	</form>
 			</div>
 		</div>

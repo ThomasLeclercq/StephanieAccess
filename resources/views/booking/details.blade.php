@@ -3,7 +3,7 @@
 	<div class="container panel-container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">New Booking</h1>
+				<h1 class="panel-title">Nouvelle réservation</h1>
 			</div>
 			<div class="panel-body">
 			@if(isset($booking))
@@ -12,27 +12,29 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input name="_method" type="hidden" value="PATCH">
 						<div class="form-group">
-							<label for="clientName">Client Name</label>
+							<label for="clientName">Nom complet du client</label>
 							<input type="text" class="form-control" name="clientName" value="{{ $booking->client->name }} {{ $booking->client->surname }}">
 						</div>
 
 			            <div class="form-group">
-			            	<label for="product">Product</label>
+			            	<label for="product">Produit désiré</label>
 			            	<select class="form-control" name="product">
                             <option value="{{ $booking->product }}">Selection - {{ $booking->product }}</option>
-                            <optgroup label="Sessions">
-                              <option value="Bars">Bars</option>
-                              <option value="Body Process">Body Process</option>
-                            </optgroup>
-                            <optgroup label="Classes">
-                              <option value="Classe de Bars">Classes Bars</option>
-                              <option value="Classes Fondations">Classes Fondations</option>
-                            </optgroup>
+                            @if(isset($categories))
+	                            @foreach($categories as $category)
+	                            	<optgroup>{{ $category->name }}</optgroup>
+	                            	@foreach($category->products as $product)
+	                            	<option value="{{ $product->name }}">{{ $product->name }}</option>
+	                            	@endforeach
+	                            @endforeach
+                            @else
+                            	<option>Pas de catégories encore crées</option>
+                            @endif
                           </select>
 			            </div>
 
 			            <div class="form-group">
-			                <label>Date</label>
+			                <label>Date et heure</label>
 			                <div class='input-group date' id='datetimepicker'>
 			                    <input type='text' class="form-control" name="date" value="{{ date_format(date_create($booking->date),'Y-m-d h:i') }}" placeholder="{{ date_format(date_create($booking->date),'d/m/Y h:i A') }}" />
 			                    
@@ -46,12 +48,14 @@
 					</form>
 				</div>
 			@else
-				<p>No booking</p>
+				<p>Pas de réservations</p>
 			@endif
 			</div>
 		</div>
 	</div>
-	<span id="availabilities" class="hidden">{{ $JSONavailabilities }}</span>
+	@if(isset($JSONavailabilities))
+		<span id="availabilities" class="hidden">{{ $JSONavailabilities }}</span>
+	@endif
 @stop
 
 @section('scripts')

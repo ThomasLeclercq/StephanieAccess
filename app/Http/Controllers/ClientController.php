@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = Client::create([
+            'name'  => $request->input('name'),
+            'surname'  => $request->input('surname'),
+            'phone'  => $request->input('phone'),
+            'email'  => $request->input('email'),
+        ]);
+
+        return redirect('/clients');
     }
 
     /**
@@ -47,7 +54,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('client.create')->with(compact('client'));
     }
 
     /**
@@ -58,7 +65,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('client.create')->with(compact('client'));
     }
 
     /**
@@ -70,7 +77,14 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $client->name = $request->input('name');
+        $client->surname = $request->input('surname');
+        $client->phone = $request->input('phone');
+        $client->email = $request->input('email');
+
+        $client->save();
+
+        return redirect('/client/'.$client->id.'/edit');
     }
 
     /**

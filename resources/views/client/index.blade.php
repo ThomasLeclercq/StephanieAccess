@@ -10,11 +10,11 @@
 			<table class="table table-responsive table-condensed table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Surname</th>
-						<th>Phone</th>
-						<th>Email</th>
-						<th>Client since :</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Téléphone</th>
+						<th>E-mail</th>
+						<th>Client depuis :</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -27,8 +27,8 @@
 						<td>{{ $client->email }}</td>
 						<td>{{ date_format(date_create($client->date_created),'d/m/Y') }}</td>
 						<td>
-							<a href="/clients/{{ $client->id }}/edit" class="btn btn-info btn-sm">Update</a>
-							<a href="/clients/archive/{{ $client->id }}" class="btn btn-danger btn-sm">Archive
+							<a href="/clients/{{ $client->id }}/edit" class="btn btn-info btn-sm">Modifier</a>
+							<a href="/clients/archive/{{ $client->id }}" class="btn btn-danger btn-sm">Archiver
 							</a>
 						</td>
 					</tr>
@@ -38,6 +38,9 @@
 		@else
 			<p>Pas de clients</p>
 		@endif
+		</div>
+		<div class="panel-footer">
+			<a href="/clients/create" class="btn btn-primary">Ajouter nouveau client</a>
 		</div>
 	</div>
 </div>

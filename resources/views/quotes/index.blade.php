@@ -3,20 +3,20 @@
 <div class="container panel-container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1 class="panel-title">Quotes</h1>
+			<h1 class="panel-title">Demandes de réservation</h1>
 		</div>
 		<div class="panel-body">
 		@if(isset($quotes) && count($quotes) >= 1)
 			<table class="table table-responsive table-hovertable-condensed table-striped">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Surname</th>
-						<th>Phone</th>
-						<th>Email</th>
-						<th>Product</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Téléhone</th>
+						<th>E-mail</th>
+						<th>Produit</th>
 						<th>Date</th>
-						<th>Contact</th>
+						<th>Contacté ?</th>
 						<th>Action</th>
 						<th></th>
 					</tr>
@@ -45,7 +45,7 @@
 							@endif
 						</td>
 						<td>
-							<button type="button" class="btn btn-danger btn-sm deleteButton" data-toggle="modal" value="{{ $quote->id }}" data-target="#deleteModal">Delete</button>
+							<button type="button" class="btn btn-danger btn-sm deleteButton" data-toggle="modal" value="{{ $quote->id }}" data-target="#deleteModal">Supprimer</button>
 						</td>
 					</tr>
 					@endforeach

@@ -45,7 +45,7 @@ class QuotesController extends Controller
             'email'     =>  $request->input('email'),
             'product'   =>  $request->input('product')
         ]);
-        Session::flash('success','Merci de votre intérêt '.$request->input('surname').', Stephanie a bien reçu votre demande et vous contacteras bientôt.');
+        Session::flash('success','Merci, '.$request->input('surname').', Stephanie a bien reçu votre demande et vous contacteras bientôt.');
         return redirect('/#content');
     }
 
