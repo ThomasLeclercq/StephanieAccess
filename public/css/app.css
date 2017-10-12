@@ -8359,6 +8359,10 @@ button.close {
 */
 
 /*
+*	Sizes for media
+*/
+
+/*
 *	Generals
 */
 
@@ -8376,6 +8380,18 @@ h5 {
   color: #4e3241;
 }
 
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+}
+
 h3 {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -8388,7 +8404,7 @@ h4 {
 
 p {
   font-family: Dosis;
-  font-size: 16px;
+  font-size: 14px;
   text-align: justify;
   text-align-last: center;
 }
@@ -8404,6 +8420,13 @@ button {
   padding: 40px;
   font-size: 22px;
   border-radius: 5px/5px;
+}
+
+@media screen and (max-width: 480px) {
+  .cta-button {
+    padding: initial;
+    font-size: 16px;
+  }
 }
 
 .cta-button:hover {
@@ -8498,6 +8521,13 @@ header {
           filter: saturate(120%);
 }
 
+@media screen and (max-width: 480px) {
+  #headerImage {
+    background: url(/images/headerImage.jpg);
+    background-size: cover;
+  }
+}
+
 #phoneNumber {
   background-color: #ded4cb;
   border-radius: 10px/10px;
@@ -8507,6 +8537,12 @@ header {
           box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 2;
+}
+
+@media screen and (max-width: 480px) {
+  #phoneNumber {
+    padding: initial;
+  }
 }
 
 #phoneNumber > p {
@@ -8524,6 +8560,15 @@ header {
   text-align: center;
   -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 480px) {
+  #nav-header {
+    position: relative;
+    right: initial;
+    top: initial;
+    z-index: 900;
+  }
 }
 
 #mainHeaderAdmin #nav-header {
@@ -8563,6 +8608,13 @@ header {
   height: 15vh;
 }
 
+@media screen and (max-width: 480px) {
+  #headerTitle,
+  #headerCta {
+    height: initial;
+  }
+}
+
 /*
 *	Story
 */
@@ -8588,6 +8640,16 @@ header {
           box-shadow: -20px 20px 40px 0px rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 480px) {
+  #story-content {
+    position: absolute;
+    z-index: initial;
+    top: initial;
+    left: 0;
+    padding: 20px;
+  }
+}
+
 #mainImage {
   background: url(/images/accessImage.jpg) left;
   background-size: cover;
@@ -8600,6 +8662,14 @@ header {
   border-radius: 5px/5px;
 }
 
+@media screen and (max-width: 480px) {
+  #mainImage {
+    height: 25%;
+    width: 100%;
+    z-index: initial;
+  }
+}
+
 /*
 *	Products
 */
@@ -8610,6 +8680,12 @@ header {
   overflow: auto;
 }
 
+@media screen and (max-width: 480px) {
+  .caption p {
+    height: initial;
+  }
+}
+
 .thumbnail {
   position: relative;
 }
@@ -8618,6 +8694,12 @@ header {
   background-size: cover;
   height: 275px;
   width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .thumbnail-image {
+    height: 150px;
+  }
 }
 
 .price {
@@ -8649,6 +8731,16 @@ header {
   padding-right: 50px;
 }
 
+@media screen and (max-width: 480px) {
+  #contact-content {
+    border: initial;
+    border-radius: initial;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+}
+
 #social-media {
   position: absolute;
   bottom: 0;
@@ -8657,6 +8749,12 @@ header {
   border: 1px solid #4e3241;
   border-radius: 50px 0px 5px 0px;
   padding: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  #social-media {
+    right: 5px;
+  }
 }
 
 #social-media a {
@@ -8676,6 +8774,14 @@ header {
   background-color: #a47a8e;
   border: 1px solid #4e3241;
   border-radius: 5px/5px;
+}
+
+@media screen and (max-width: 480px) {
+  #contactPicture {
+    width: 90%;
+    left: 5%;
+    top: initial;
+  }
 }
 
 #contactImage {

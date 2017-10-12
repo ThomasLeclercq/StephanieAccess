@@ -8,7 +8,7 @@
   <div id="navigation">
     <nav id="nav-header" class="nav navbar-nav">
       <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header hidden-xs">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>

@@ -24,6 +24,11 @@ $title: Quicksand;
 $text: Dosis;
 
 /*
+*	Sizes for media
+*/
+$sm: 480px;
+
+/*
 *	Generals
 */
 
@@ -38,6 +43,20 @@ h1,h2,h3,h4,h5
 	text-align: center;
 	color: $dark-purple;
 }
+h1
+{
+	@media screen and (max-width: $sm)
+	{
+		font-size: 20px;
+	}
+}
+h2
+{
+	@media screen and (max-width: $sm)
+	{
+		font-size: 18px;
+	}
+}
 h3
 {
 	margin-top: 50px;
@@ -51,7 +70,7 @@ h4
 p
 {
 	font-family: $text;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: justify;
 	text-align-last: center;
 }
@@ -68,6 +87,12 @@ button
 	padding: 40px;
 	font-size: 22px;
 	border-radius: 5px/5px;
+
+	@media screen and (max-width: $sm)
+	{
+		padding: initial;
+		font-size: 16px;
+	}
 }
 
 .cta-button:hover
@@ -147,6 +172,12 @@ header
 	background-size: cover;
 	opacity: .8;
 	filter: saturate(120%);
+
+	@media screen and (max-width: $sm)
+	{
+		background: url(/images/headerImage.jpg);
+		background-size: cover;
+	}
 }
 
 #phoneNumber
@@ -158,6 +189,10 @@ header
 	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
 	position: relative;
 	z-index: 2;
+
+	@media screen and (max-width: $sm){
+		padding: initial;
+	}
 }
 
 #phoneNumber > p
@@ -176,6 +211,13 @@ header
 	border-radius: 10px/10px;
 	text-align: center;
 	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
+
+	@media screen and (max-width: $sm){
+		position: relative;
+		right: initial;
+		top: initial;
+		z-index: 900;
+	}
 }
 
 #mainHeaderAdmin #nav-header
@@ -214,6 +256,11 @@ header
 #headerTitle, #headerCta
 {
 	height: 15vh;
+	
+	@media screen and (max-width: $sm)
+	{
+		height: initial;
+	}
 }
 
 /*
@@ -238,6 +285,15 @@ header
 	padding: 20px 40px;
 	border-radius: 5px/5px;
 	box-shadow: -20px 20px 40px 0px rgba(0,0,0,.4); 
+
+	@media screen and (max-width: $sm)
+	{
+		position: absolute;
+		z-index: initial;
+		top: initial;
+		left:0;
+		padding: 20px;
+	}
 }
 #mainImage
 {
@@ -250,6 +306,13 @@ header
 	position: absolute;
 	z-index: 0;
 	border-radius: 5px/5px;
+
+	@media screen and (max-width: $sm)
+	{
+		height: 25%;
+		width: 100%;
+		z-index: initial;
+	}
 }
 
 /*
@@ -260,6 +323,11 @@ header
 	font-size: 15px;
 	height: 250px;
 	overflow: auto;
+
+	@media screen and (max-width: $sm)
+	{
+		height: initial;
+	}
 }
 .thumbnail
 {
@@ -271,6 +339,11 @@ header
 	background-size: cover;
 	height: 275px;
 	width: 100%;
+
+	@media screen and (max-width: $sm)
+	{
+		height: 150px;
+	}
 }
 
 .price
@@ -300,6 +373,15 @@ header
 	padding-bottom: 100px;
 	padding-left: 150px;
 	padding-right: 50px;
+
+	@media screen and (max-width: $sm)
+	{
+		border: initial;
+		border-radius: initial;
+		padding-top: 0;
+		padding-left: 0;
+		padding-bottom: 0;
+	}
 }
 #social-media
 {
@@ -310,6 +392,11 @@ header
 	border: 1px solid $dark-purple;
 	border-radius: 50px 0px 5px 0px;
 	padding: 10px;
+
+	@media screen and (max-width: $sm)
+	{
+		right: 5px;
+	}
 }
 #social-media a
 {
@@ -329,6 +416,13 @@ header
 	background-color: $light-purple;
 	border: 1px solid $dark-purple;
 	border-radius: 5px/5px;
+
+	@media screen and (max-width: $sm)
+	{
+		width: 90%;
+		left: 5%;
+		top: initial;
+	}
 }
 #contactImage
 {
