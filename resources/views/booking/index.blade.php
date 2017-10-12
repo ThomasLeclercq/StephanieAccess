@@ -49,7 +49,7 @@
 			</table>
 		</div>
 		@else
-			<p>No Bookings</p>
+			<p>Pas de réservations</p>
 		@endif
 		</div>
 	</div>
@@ -67,16 +67,16 @@
       </div>
       <div class="modal-body">
         <p>
-        	You are about to delete a booking for the reservation.
+        	Vous êtes sur le point de supprimer définitivement une réservation.
         	<br>
-        	This action cannot be undone, please be sure before confirming it's deletion.
+        	Cette action ne peut pas être modifiée une fois confirmée, soyez bien sûr que vous souhaitez annuler la réservation avant de cliquer sur "annuler la réservation".
         </p>
       </div>
       <div class="modal-footer">
       	<form id="deleteForm" method="POST">
       		{{ csrf_field() }}
       		<input name="_method" type="hidden" value="DELETE">
-      		<button type="submit" name="deleteBooking" class="btn btn-danger">Cancel reservation</button>
+      		<button type="submit" name="deleteBooking" class="btn btn-danger">Annuler la réservation</button>
       	</form>
       </div>
     </div>

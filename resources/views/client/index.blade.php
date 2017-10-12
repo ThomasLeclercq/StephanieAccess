@@ -36,7 +36,7 @@
 				</tbody>
 			</table>
 		@else
-			<p>No Clients</p>
+			<p>Pas de clients</p>
 		@endif
 		</div>
 	</div>

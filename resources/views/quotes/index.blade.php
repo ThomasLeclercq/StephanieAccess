@@ -52,7 +52,7 @@
 				</tbody>
 			</table>
 		@else
-			<p>No quotes</p>
+			<p>Pas de nouvelles demandes</p>
 		@endif
 		</div>
 	</div>
@@ -66,20 +66,20 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Warning</h4>
+        <h4 class="modal-title">Attention !!!</h4>
       </div>
       <div class="modal-body">
         <p>
-        	You are about to delete a quote from a possible client.
+        	Vous êtes sur le point de supprimer définitivement la demande d'un potentiel client.
         	<br>
-        	This action cannot be undone, please be sure before confirming it's deletion.
+        	Cette action ne peut pas être modifiée une fois confirmée, soyez bien sûr que vous souhaitez supprimer la demande avant de cliquer sur "annuler la demande".
         </p>
       </div>
       <div class="modal-footer">
       	<form id="deleteForm" method="POST">
       		{{ csrf_field() }}
       		<input name="_method" type="hidden" value="DELETE">
-      		<button type="submit" name="deleteQuotes" class="btn btn-danger">Cancel quote</button>
+      		<button type="submit" name="deleteQuotes" class="btn btn-danger">Annuler la demande</button>
       	</form>
       </div>
     </div>

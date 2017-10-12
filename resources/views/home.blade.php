@@ -192,7 +192,7 @@
                     <div id="selectFormGroup" class="form-group">
                       <label for="product">Quel service vous intéresse ?</label>
                       <select id="bookingModalSelect" class="form-control quoteInput" name="product">
-                        <option id="firstOption" value="">Je ne sais pas encore</option>
+                        <option id="firstOption" value="Client hésite encore">Je ne sais pas encore</option>
                         @foreach($categories as $category)
                             <optgroup label="{{ $category->name }}"></optgroup>
                             @foreach($category->products as $product)

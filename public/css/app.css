@@ -8603,6 +8603,12 @@ header {
   width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  #mainHeaderAdmin #nav-header {
+    left: 5%;
+  }
+}
+
 #navbar ul li a {
   color: #4e3241;
   font-family: Quicksand;
