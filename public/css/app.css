@@ -8380,13 +8380,13 @@ h5 {
   color: #4e3241;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   h1 {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   h2 {
     font-size: 18px;
   }
@@ -8404,9 +8404,15 @@ h4 {
 
 p {
   font-family: Dosis;
-  font-size: 14px;
+  font-size: 16px;
   text-align: justify;
   text-align-last: center;
+}
+
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 button {
@@ -8422,7 +8428,7 @@ button {
   border-radius: 5px/5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .cta-button {
     padding: 20px;
     font-size: 16px;
@@ -8443,7 +8449,7 @@ button {
   padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .cta-button-mini {
     padding: 10px;
   }
@@ -8455,7 +8461,7 @@ button {
   border: 2px solid #ded4cb;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .close {
     font-size: 3em;
     color: red;
@@ -8534,7 +8540,14 @@ header {
           filter: saturate(120%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+  #headerImage {
+    background: url(/images/headerImage.jpg);
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
   #headerImage {
     background: url(/images/headerImage.jpg);
     background-size: cover;
@@ -8552,7 +8565,7 @@ header {
   z-index: 2;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #phoneNumber {
     padding: initial;
   }
@@ -8575,7 +8588,7 @@ header {
           box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #nav-header {
     position: relative;
     right: initial;
@@ -8621,10 +8634,17 @@ header {
   height: 15vh;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #headerTitle,
   #headerCta {
     height: initial;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #headerTitle,
+  #headerCta {
+    height: 20vh;
   }
 }
 
@@ -8653,13 +8673,19 @@ header {
           box-shadow: -20px 20px 40px 0px rgba(0, 0, 0, 0.4);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #story-content {
     position: absolute;
     z-index: initial;
     top: initial;
     left: 0;
     padding: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #story-content {
+    left: 45%;
   }
 }
 
@@ -8675,7 +8701,7 @@ header {
   border-radius: 5px/5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #mainImage {
     height: 25%;
     width: 100%;
@@ -8693,9 +8719,15 @@ header {
   overflow: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .caption p {
     height: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .caption p {
+    height: 150px;
   }
 }
 
@@ -8709,7 +8741,7 @@ header {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .thumbnail-image {
     height: 150px;
   }
@@ -8744,7 +8776,7 @@ header {
   padding-right: 50px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #contact-content {
     border: initial;
     border-radius: initial;
@@ -8764,7 +8796,7 @@ header {
   padding: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #social-media {
     right: 5px;
   }
@@ -8789,11 +8821,18 @@ header {
   border-radius: 5px/5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #contactPicture {
     width: 90%;
     left: 5%;
     top: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #contactPicture {
+    left: 0;
+    top: 110px;
   }
 }
 

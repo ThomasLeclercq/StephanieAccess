@@ -10,16 +10,18 @@
                 <h1>Stéphanie Casanova Leclercq</h1>
                 <h2>Facilitatrice certifiée Access Consciousness</h2>
             </div>
-            <div id="headerCta" class="container">
-                @if(Session::has('success'))
-                    <div class="col-xs-10 col-xs-offset-1">    
-                        <p class="alert alert-success">{{ Session::get('success') }}</p>
-                    </div>
-                @elseif(isset($categories))
-                    <div class="col-md-4 col-md-offset-4">    
-                        <button type="button" data-toggle="modal" data-target="#bookingModal" class="cta-button btn btn-block">Prendre rendez-vous</button>
-                    </div>
-                @endif
+            <div class="row">
+                <div id="headerCta" class="container">
+                    @if(Session::has('success'))
+                        <div class="col-xs-10 col-xs-offset-1">    
+                            <p class="alert alert-success">{{ Session::get('success') }}</p>
+                        </div>
+                    @elseif(isset($categories))
+                        <div class="col-md-4 col-md-offset-4">    
+                            <button type="button" data-toggle="modal" data-target="#bookingModal" class="cta-button btn btn-block">Prendre rendez-vous</button>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
 
@@ -28,7 +30,7 @@
                 <h3>Access Consciousness</h3>
             </div>
             <div id="story-block" class="row story-container">
-                <div id="story-content" class="col-sm-4">
+                <div id="story-content" class="col-sm-6">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

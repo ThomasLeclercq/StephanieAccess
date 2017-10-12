@@ -26,7 +26,10 @@ $text: Dosis;
 /*
 *	Sizes for media
 */
+$xs: 767px;
 $sm: 768px;
+$md: 992px;
+$lg: 1200px;
 
 /*
 *	Generals
@@ -45,14 +48,14 @@ h1,h2,h3,h4,h5
 }
 h1
 {
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		font-size: 20px;
 	}
 }
 h2
 {
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		font-size: 18px;
 	}
@@ -70,9 +73,14 @@ h4
 p
 {
 	font-family: $text;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: justify;
 	text-align-last: center;
+
+	@media screen and (max-width: $xs)
+	{
+		font-size: 14px;
+	}
 }
 button
 {
@@ -88,7 +96,7 @@ button
 	font-size: 22px;
 	border-radius: 5px/5px;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		padding: 20px;
 		font-size: 16px;
@@ -111,7 +119,7 @@ button
 	border: 2px solid $dark-purple;
 	padding: 20px;
 	
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		padding: 10px;
 	}
@@ -126,7 +134,7 @@ button
 
 .close
 {
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		font-size: 3em;
 		color: red;
@@ -187,7 +195,13 @@ header
 	opacity: .8;
 	filter: saturate(120%);
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
+	{
+		background: url(/images/headerImage.jpg);
+		background-size: cover;
+	}
+
+	@media screen and (min-width: $sm)
 	{
 		background: url(/images/headerImage.jpg);
 		background-size: cover;
@@ -204,7 +218,7 @@ header
 	position: relative;
 	z-index: 2;
 
-	@media screen and (max-width: $sm){
+	@media screen and (max-width: $xs){
 		padding: initial;
 	}
 }
@@ -226,7 +240,7 @@ header
 	text-align: center;
 	box-shadow: 0px 0px 20px 2px rgba(0,0,0,.5);
 
-	@media screen and (max-width: $sm){
+	@media screen and (max-width: $xs){
 		position: relative;
 		right: initial;
 		top: initial;
@@ -271,9 +285,14 @@ header
 {
 	height: 15vh;
 	
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		height: initial;
+	}
+
+	@media screen and (min-width: $md)
+	{
+		height: 20vh;
 	}
 }
 
@@ -300,13 +319,18 @@ header
 	border-radius: 5px/5px;
 	box-shadow: -20px 20px 40px 0px rgba(0,0,0,.4); 
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		position: absolute;
 		z-index: initial;
 		top: initial;
 		left:0;
 		padding: 20px;
+	}
+
+	@media screen and (min-width: $sm)
+	{
+		left: 45%;
 	}
 }
 #mainImage
@@ -321,7 +345,7 @@ header
 	z-index: 0;
 	border-radius: 5px/5px;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		height: 25%;
 		width: 100%;
@@ -338,9 +362,14 @@ header
 	height: 250px;
 	overflow: auto;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		height: initial;
+	}
+
+	@media screen and (min-width: $sm)
+	{
+		height: 150px;
 	}
 }
 .thumbnail
@@ -354,7 +383,7 @@ header
 	height: 275px;
 	width: 100%;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		height: 150px;
 	}
@@ -388,7 +417,7 @@ header
 	padding-left: 150px;
 	padding-right: 50px;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		border: initial;
 		border-radius: initial;
@@ -407,7 +436,7 @@ header
 	border-radius: 50px 0px 5px 0px;
 	padding: 10px;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		right: 5px;
 	}
@@ -431,11 +460,17 @@ header
 	border: 1px solid $dark-purple;
 	border-radius: 5px/5px;
 
-	@media screen and (max-width: $sm)
+	@media screen and (max-width: $xs)
 	{
 		width: 90%;
 		left: 5%;
 		top: initial;
+	}
+
+	@media screen and (min-width: $sm)
+	{
+		left:0;
+		top: 110px;
 	}
 }
 #contactImage
