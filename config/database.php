@@ -80,8 +80,6 @@ return [
             'strict' => true,
             'engine' => null,
         ],   
-        */
-
     
         'pgsql' => [
             'driver' => 'pgsql',
