@@ -1,10 +1,10 @@
 <?php
 
-
+/*
 if(!defined('APP_KEY')){
     define('APP_KEY', $_SERVER['APP_KEY']);
 }
-
+*/
 
 return [
 
@@ -109,8 +109,8 @@ return [
     |
     */
 
-    //'key' => env('APP_KEY'),
-    'key' => APP_KEY,
+    'key' => env('APP_KEY'),
+    //'key' => APP_KEY,
     
     'cipher' => 'AES-256-CBC',
 

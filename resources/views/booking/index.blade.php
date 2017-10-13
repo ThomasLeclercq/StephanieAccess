@@ -93,7 +93,7 @@
       	<form id="deleteForm" method="POST">
       		{{ csrf_field() }}
       		<input name="_method" type="hidden" value="DELETE">
-      		<button type="submit" name="deleteBooking" class="btn btn-danger">Annuler la réservation</button>
+      		<button type="button" name="deleteBooking" class="btn btn-danger" form="deleteForm">Annuler la réservation</button>
       	</form>
       </div>
     </div>

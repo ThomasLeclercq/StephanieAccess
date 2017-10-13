@@ -43,8 +43,6 @@
 	@yield('content')
 
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-  	<script type="text/javascript" src="{{ asset('bower_resources/moment/min/moment.min.js') }}"></script>
-  	<script type="text/javascript" src="{{ asset('bower_resources/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

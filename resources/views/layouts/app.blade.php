@@ -45,7 +45,6 @@
                         @if (Auth::guest())
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li><a href="/quotes">Demandes de contact</a></li>
                             <li><a href="/bookings">Réservations</a></li>
@@ -83,6 +82,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

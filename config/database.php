@@ -1,6 +1,6 @@
 <?php
 
-
+/*
 if (!defined('RDS_HOSTNAME')) {
     define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
     define('RDS_PORT', $_SERVER['RDS_PORT']);
@@ -8,7 +8,7 @@ if (!defined('RDS_HOSTNAME')) {
     define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
     define('RDS_DATABASE', $_SERVER['RDS_DATABASE']);
 }
-
+*/
 
 return [
 
@@ -49,8 +49,8 @@ return [
             'prefix' => '',
         ],
 
-        /*
-        'msql' => [
+        
+        'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST','localhost'),
             'port' => env('DB_PORT','3306'),
@@ -64,8 +64,8 @@ return [
             'strict' => true,
             'engine' => null,
         ],    
-        */
         
+        /*
         'mysql' => [
             'driver' => 'mysql',
             'host' => RDS_HOSTNAME,
@@ -80,7 +80,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],   
-        
+        */
 
         'pgsql' => [
             'driver' => 'pgsql',
