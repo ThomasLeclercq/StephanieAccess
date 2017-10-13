@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('content')
 <div class="container panel-container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1 class="panel-title">Réservations</h1>
+			<h1 class="panel-title">{{ isset($pastBookings) ? 'Anciennes ':''}} Réservations</h1>
 		</div>
 		<div class="panel-body">
 		@if(isset($bookings) && count($bookings) >= 1)
@@ -46,10 +46,27 @@
 						</tr>
 					@endforeach
 				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="7"></td>
+						<td colspan="2">
+							@if(isset($pastBookings))
+								<a href="/bookings" class="btn btn-info btn-block">Réservations</a>
+							@else
+								<a href="/pastBookings" class="btn btn-info btn-block">Anciennes Résas</a>
+							@endif
+						</td>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 		@else
 			<p>Pas de réservations</p>
+			@if(isset($pastBookings))
+				<a href="/bookings" class="btn btn-info btn-block">Réservations</a>
+			@else
+				<a href="/pastBookings" class="btn btn-info btn-block">Anciennes Résas</a>
+			@endif
 		@endif
 		</div>
 	</div>

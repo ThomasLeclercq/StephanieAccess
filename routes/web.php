@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
+Route::get('/', 'HomeController@index');
+Route::get('/admin', function(){
+	return redirect('/login');
+});
+Route::get('/addUser', function(){
+	return redirect('/register');
+});
 
 //Dashboard
 Route::get('/dashboard','DashboardController@get');
@@ -26,6 +32,7 @@ Route::get('/quotes/transform/{quoteId}', 'QuotesController@transform');
 
 //Bookings
 Route::resource('bookings', 'BookingController');
+Route::get('/pastBookings', 'BookingController@pastBookings');
 
 //Clients
 Route::resource('clients', 'ClientController');
@@ -37,3 +44,10 @@ Route::get('/products/{productId}/archive', 'ProductsController@archive');
 
 //Category
 Route::resource('categories', 'CategoryController');
+Auth::routes();
+
+//Users
+Route::resource('users','UserController');
+Route::get('/users/{user}/archive', 'UserController@destroy');
+
+Route::get('/home', 'HomeController@index')->name('home');

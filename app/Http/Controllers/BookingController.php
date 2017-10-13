@@ -11,14 +11,31 @@ use DateTime;
 class BookingController extends Controller
 {
     /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $bookings = Booking::all();
+        $bookings = Booking::where('date','>=',date('Y-m-d H:i:s'))->get();
         return view('booking.index')->with(compact('bookings'));
+    }
+
+    public function pastBookings()
+    {
+        $bookings = Booking::where('date','<=',date('Y-m-d H:i:s'))->get();
+        $pastBookings = true;
+        return view('booking.index')->with(compact('pastBookings','bookings'));
     }
 
     /**

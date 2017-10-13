@@ -50,7 +50,7 @@ return [
         ],
 
         /*
-        'mysql' => [
+        'msql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST','localhost'),
             'port' => env('DB_PORT','3306'),
@@ -80,7 +80,8 @@ return [
             'strict' => true,
             'engine' => null,
         ],   
-    
+        
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
